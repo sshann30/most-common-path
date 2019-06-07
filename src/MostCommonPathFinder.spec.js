@@ -12,7 +12,7 @@ var fakeLogData = `
 `;
 
 describe('Most Common 3 page Sequence', function(){
-  var validLogFilePath = '../dragon.log';
+  var validLogFilePath = 'dragon.log';
 
 
   describe('MostCommonPathFinder', function(){
