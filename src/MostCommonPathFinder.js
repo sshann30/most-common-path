@@ -23,17 +23,22 @@ const MostCommonPathFinder = (() => {
         // console.log(logfileString)
 
         const lines = logfileString.split("\n")
-        // console.log(lines)
+        console.log(lines)
         // for everyone of these split, there is going to be an array w/ id and path
-
-
-        // for each line in log (for loop)
-        // split on space (gives back array without the id. All i want is the pathpath)
+        newLines = ["placholder" ]
         for (i = 0; i < lines.length; i++) {
-          newLines = lines[i].split("\n");
-          removeElements(newLines, '1', '2', '3', '4', '5', '6', '7');
+          var usernumber = lines[i].charAt(0)
+          var noUser = lines[i].substr(3);
+          if (newLines [usernumber]){
+            newLines [usernumber] .push (noUser)
+          }
+          else (newLines.push([noUser]))
           
         }
+        console.log(newLines)
+        // for each line in log (for loop)
+        // split on space (gives back array without the id. All i want is the pathpath)
+        
       });
     }
   }
