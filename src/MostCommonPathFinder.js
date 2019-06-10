@@ -25,7 +25,8 @@ const MostCommonPathFinder = (() => {
         const lines = logfileString.split("\n")
         console.log(lines)
         // for everyone of these split, there is going to be an array w/ id and path
-        newLines = ["placholder" ]
+    
+        newLines = ["placholder"]
         for (i = 0; i < lines.length; i++) {
           var usernumber = lines[i].charAt(0)
           var noUser = lines[i].substr(3);
@@ -36,9 +37,43 @@ const MostCommonPathFinder = (() => {
           
         }
         console.log(newLines)
-        // for each line in log (for loop)
-        // split on space (gives back array without the id. All i want is the pathpath)
-        
+        // console.log(noUser)
+
+        // each users data is saved! find the most common consecutive 3 word pattern in each array
+          //  loop through array of arrays
+          //  if the length is > 2 then
+          // loop thru inside array, concatinate and push into first array
+
+          // array 3
+          var consArray = []
+          
+          // array 4
+          var arrayCounter =[]
+
+          for (i = 1; i < newLines.length; i++) {
+            if (newLines[i].length > 2 ){
+              
+              for (var j = 0; j < newLines[i].length; j++){
+               
+                  if (newLines[i][j+2]) {
+                    
+                    var threeCons = newLines[i][j] + newLines[i][j+1]+ newLines[i][j+2]
+                    console.log(threeCons)
+                    if (consArray.includes (threeCons)){
+                      arrayCounter[consArray.indexOf(threeCons)]++
+                    }
+                    else {
+                      console.log(consArray + threeCons)
+
+                      consArray.push(threeCons) 
+                    arrayCounter.push(1)}
+                  }
+              }
+            }
+          }
+          console.log(consArray) 
+          console.log(arrayCounter)
+          
       });
     }
   }
